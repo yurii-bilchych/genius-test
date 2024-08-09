@@ -7,7 +7,9 @@
   --secondary-dark: #a28268;
 }
 /* Base */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 body {
@@ -27,6 +29,9 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+a {
+  display: inline-block;
 }
 address {
   font-style: normal;
@@ -107,7 +112,7 @@ ul {
 .hero-section {
   padding: 272px 0;
   margin-bottom: 0;
-  background-image: url("../images/hero-section-background.jpg");
+  background-image: url('../images/hero-section-background.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -188,6 +193,18 @@ ul {
   border: 2px solid var(--color-brand-light);
   content: '';
 }
+.chefs-list {
+  display: flex;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
 .chef-photo {
   border-radius: 4px 4px 4px 200px;
   box-shadow: -16px 16px 0 0 var(--primary-light),
@@ -198,8 +215,19 @@ ul {
   font-size: 40px;
   font-weight: 600;
 }
+.chef-text p {
+  margin-bottom: 24px;
+}
+.chef-text p:last-child {
+  margin-bottom: 0;
+}
 
 /* Formats section */
+.formats-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
 .formats-list {
   display: flex;
   gap: 20px;
@@ -233,6 +261,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -252,17 +281,56 @@ ul {
 }
 
 /* Contact section */
+.contact-section {
+  padding-bottom: 96px;
+}
+.contact-container {
+  display: flex;
+  gap: 20px;
+}
 .contact-title {
   margin-bottom: 16px;
 }
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
 
 /* Footer */
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+.footer-nav {
+  display: flex;
+  flex-basis: 50%;
+  gap: 20px;
+}
+.footer-logo {
+  flex-grow: 1;
+}
+.footer-menu {
+  flex-grow: 1;
+}
+.footer-address {
+  display: flex;
+  flex-basis: 50%;
+  gap: 20px;
+}
 .footer {
-  background-image: url("../images/footer-background.png");
+  padding: 32px 0;
+  background-image: url('../images/footer-background.png');
   background-color: var(--primary-dark);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.address-list {
+  flex-grow: 1;
+}
+.address-info {
+  flex-grow: 1;
 }
 .address-link {
   color: var(--primary-light);
